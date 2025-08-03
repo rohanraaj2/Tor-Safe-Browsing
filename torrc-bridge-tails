@@ -1,0 +1,8 @@
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+Bridge [REPLACE_WITH_BRIDGE]
+
+SocksPort 9050
+Log notice file /var/log/tor/notices.log
+RunAsDaemon 1
+AvoidDiskWrites 1
