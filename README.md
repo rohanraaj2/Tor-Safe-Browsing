@@ -44,7 +44,31 @@ tor -f ~/torrc-bridge-tails
 
 ---
 
-### 4. `autostart-tor.sh`
+
+### 4. `enable_onion_only.sh`
+- Enforces onion-only mode by updating your system Tor configuration to reject all non-onion (clearnet) exits.
+- Backs up your current `/etc/tor/torrc` before making changes.
+- **Requires root.**
+
+**Usage:**
+```bash
+sudo bash enable_onion_only.sh
+```
+
+---
+
+### 5. `disable_onion_only.sh`
+- Removes the onion-only restriction from your Tor configuration, restoring clearnet access via Tor.
+- **Requires root.**
+
+**Usage:**
+```bash
+sudo bash disable_onion_only.sh
+```
+
+---
+
+### 6. `autostart-tor.sh`
 - Simple helper to autostart Tor using the `torrc-bridge-tails` config.
 - Add to autostart routines or run manually after boot.
 
@@ -63,10 +87,3 @@ chmod +x autostart-tor.sh
 - Requires internet access and obfs4 bridge from Tor Project.
 - Only use these tools for legal and ethical purposes.
 - The scripts do not store or log any addresses.
-
-Stay safe ✊
-
----
-
-## License
-MIT License
